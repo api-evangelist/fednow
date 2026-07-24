@@ -1,0 +1,21 @@
+generated: '2026-07-24'
+method: searched
+source: live probes of https://www.frbservices.org/.well-known/*
+host: https://www.frbservices.org
+documents:
+- path: /.well-known/security.txt
+  status: 404
+- path: /.well-known/openid-configuration
+  status: 404
+- path: /.well-known/oauth-authorization-server
+  status: 404
+- path: /.well-known/api-catalog
+  status: 404
+- path: /.well-known/ai-plugin.json
+  status: 404
+notes: >-
+  No /.well-known discovery documents are published on the public FedLine /
+  FRBservices host. FedNow API authentication is Client ID + PKI certificate over
+  the credential-gated FedLine Developer platform, not an anonymous OAuth/OIDC
+  surface, so there is no anonymous authorization-server or OIDC discovery document
+  to fetch. Empty result is expected and valid for a gated financial-institution rail.

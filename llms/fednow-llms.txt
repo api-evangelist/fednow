@@ -1,0 +1,42 @@
+# FedNow Service
+
+> The FedNow Service is an instant-payments rail operated by the Federal Reserve Banks, launched July 2023 to move funds between U.S. financial institutions in real time, 24x7x365, with immediate interbank settlement in central bank money. It is ISO 20022 native and one of three domestic U.S. rails alongside The Clearing House's RTP network and ACH. FedNow is a scheme operator, not a consumer-facing PSP: participating banks and credit unions connect over FedLine and may optionally use a small set of credential-gated FedNow REST APIs. Access is restricted to enrolled institutions — there is no open, self-serve public API.
+
+## APIs
+
+- [FedNow Account Balance API](https://www.frbservices.org/fedline-solutions/fedline-developer/fednow-apis): Account Management API returning master-account and subaccount balance reports to help institutions manage intraday liquidity and avoid overdrafts.
+- [FedNow Network Intelligence API](https://www.frbservices.org/fedline-solutions/fedline-developer/fednow-apis): Risk Mitigation API returning receiver account-level data insights so a sending institution can assess the fraud risk of a potential FedNow payment.
+- [FedNow Participant List API](https://www.frbservices.org/fedline-solutions/fedline-developer/fednow-apis): Service Management API providing a daily listing of routing transit numbers (RTNs) enabled on the FedNow Service to reduce payment rejections.
+- [FedNow Ping API](https://www.frbservices.org/fedline-solutions/fedline-developer/fednow-apis): Service Management API to verify connectivity to the FedNow Service; required during onboarding.
+- [FedNow ISO 20022 Message Specifications](https://www.frbservices.org/financial-services/fednow/what-is-iso-20022-why-does-it-matter): The core scheme messaging surface (customer credit transfers, requests for payment, liquidity transfers, system/account reporting), hosted on SWIFT MyStandards.
+
+## Authentication
+
+- Gated: enrolled financial institutions only, via the FedLine Developer platform.
+- Mutual TLS: a client PKI certificate per environment (Test and Production) presented on each API request.
+- Client ID: identifies the calling institution and its entitlements.
+- FedLine security tokens: multi-factor authentication to reach the developer platform.
+- No OAuth2 / OpenID Connect and no self-serve public API keys.
+
+## Docs & Resources
+
+- [FedNow Service](https://www.frbservices.org/financial-services/fednow)
+- [FedLine Developer portal](https://www.frbservices.org/fedline-solutions/fedline-developer)
+- [FedNow APIs overview](https://www.frbservices.org/fedline-solutions/fedline-developer/fednow-apis)
+- [FedLine Developer sign-up](https://www.frbservices.org/fedline-solutions/fedline-developer/sign-up)
+- [What is ISO 20022](https://www.frbservices.org/financial-services/fednow/what-is-iso-20022-why-does-it-matter)
+- [SWIFT MyStandards — Federal Reserve group](https://www2.swift.com/mystandards/#/group/Federal_Reserve_Financial_Services)
+- [Fees (FedNow 2026)](https://www.frbservices.org/resources/fees/fednow-2026)
+- [Service Status](https://www.frbservices.org/app/status/serviceStatus.do)
+- [Terms of Use](https://frbservices.org/terms)
+- [Privacy Policy](https://app.frbservices.org/terms/privacy.html)
+
+## Repo artifacts
+
+- authentication/fednow-authentication.yml — auth profile (mutual TLS + Client ID + MFA)
+- conformance/fednow-conformance.yml — ISO 20022 / real-time-payments conformance
+- lifecycle/fednow-lifecycle.yml — status page, ISO 20022 versioning, 24x7x365 availability
+- changelog/fednow-changelog.yml — dated FRFS/FedNow API milestones
+- sandbox/fednow-sandbox.yml — Test vs Production environment separation
+- security/fednow-domain-security.yml — TLS/HSTS/SPF/DMARC probe of frbservices.org
+- well-known/fednow-well-known.yml — /.well-known probe results

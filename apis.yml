@@ -125,6 +125,8 @@ apis:
   - type: APIReference
     url: https://www2.swift.com/mystandards/#/group/Federal_Reserve_Financial_Services
 common:
+- type: DomainSecurity
+  url: security/fednow-domain-security.yml
 - type: Website
   url: https://www.frbservices.org/financial-services/fednow
 - type: DeveloperPortal
@@ -139,6 +141,30 @@ common:
   url: https://www.frbservices.org/forms/fednow-service
 - type: Support
   url: https://www.frbservices.org/contact
+- type: GettingStarted
+  url: https://www.frbservices.org/fedline-solutions/fedline-developer/sign-up
+- type: Blog
+  url: https://www.frbservices.org/news/fed360
+- type: TermsOfService
+  url: https://frbservices.org/terms
+- type: PrivacyPolicy
+  url: https://app.frbservices.org/terms/privacy.html
+- type: StatusPage
+  url: https://www.frbservices.org/app/status/serviceStatus.do
+- type: Authentication
+  url: authentication/fednow-authentication.yml
+- type: Conformance
+  url: conformance/fednow-conformance.yml
+- type: Lifecycle
+  url: lifecycle/fednow-lifecycle.yml
+- type: ChangeLog
+  url: changelog/fednow-changelog.yml
+- type: Sandbox
+  url: sandbox/fednow-sandbox.yml
+- type: WellKnown
+  url: well-known/fednow-well-known.yml
+- type: LLMsTxt
+  url: llms/fednow-llms.txt
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com

@@ -1,0 +1,47 @@
+generated: '2026-07-24'
+method: searched
+source: https://www.frbservices.org/news/fed360
+scheme: dated-announcements
+current_version: FedLine Developer API platform (launched 2025-10-08)
+docs: https://www.frbservices.org/fedline-solutions/fedline-developer
+entries:
+- date: '2025-10-08'
+  breaking: false
+  additions: true
+  highlights: >-
+    Federal Reserve Financial Services introduced FedLine Developer, a secure
+    platform giving financial institutions access to Federal Reserve APIs,
+    launching with seven FRFS APIs across account management, information
+    services, risk mitigation and service management (including FedNow Account
+    Balance, Network Intelligence, Participant List and Ping).
+  source: https://www.frbservices.org/news/press-releases/100825-fedline-developer-apis
+- date: '2025-04-28'
+  breaking: false
+  additions: true
+  highlights: >-
+    FedNow Network Intelligence API became available to early adopters, letting
+    sending institutions request receiver account-level data insights to assess
+    the fraud risk of a potential FedNow payment.
+  source: https://www.frbservices.org/news/communications/045826-network-intelligence-api
+- date: '2025-04-23'
+  breaking: false
+  additions: true
+  highlights: >-
+    Federal Reserve announced the FedNow Network Intelligence API to empower
+    participants with payments-fraud-risk confidence.
+  source: https://www.frbservices.org/news/press-releases/042326-fednow-network-intelligence-api-empowers-participants-payments-confidence
+- date: '2024-08-05'
+  breaking: false
+  additions: false
+  highlights: >-
+    FedNow Service operational notifications became available via the
+    FRBservices.org Service Status page.
+  source: https://www.frbservices.org/news/communications/080524-fednow-service-available-via-service-status
+- date: '2023-07-20'
+  breaking: false
+  additions: true
+  highlights: The FedNow Service went live as the Federal Reserve's instant-payments rail.
+  source: https://www.frbservices.org/news/press-releases/072023-fednow-live-announcement
+notes: >-
+  There is no machine-readable changelog feed; entries are curated from FRFS
+  press releases and Fed360 communications. Recent window only.

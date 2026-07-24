@@ -1,0 +1,32 @@
+generated: '2026-07-24'
+method: searched
+source: https://www.frbservices.org/fedline-solutions/fedline-developer/fednow-apis
+environments:
+- name: Test
+  purpose: >-
+    Separate non-production environment for FedNow / FRFS API integration and
+    readiness. Requires its own client PKI certificate distinct from Production.
+- name: Production
+  purpose: Live FedNow Service; requires a separate Production client certificate.
+key_separation:
+  mechanism: per-environment client certificate
+  note: >-
+    "Each environment (Test and Production) requires a different certificate."
+    There is no test-vs-live API-key prefix; separation is enforced by
+    environment-scoped PKI certificates.
+onboarding_check:
+  api: Ping
+  note: >-
+    Participants are required to use the Ping API to confirm connectivity to the
+    FedNow Service during onboarding.
+iso20022_testing:
+  note: >-
+    ISO 20022 message readiness and testing materials are hosted on SWIFT
+    MyStandards and require a SWIFT account.
+  url: https://www2.swift.com/mystandards/#/group/Federal_Reserve_Financial_Services
+test_values: []
+notes: >-
+  FedNow publishes a formal Test environment but does not publish open magic test
+  identifiers or test credentials publicly; test certificates and message samples
+  are provisioned to enrolled institutions through FedLine Developer and SWIFT
+  MyStandards. No values are fabricated here.

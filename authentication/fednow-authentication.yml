@@ -1,0 +1,37 @@
+generated: '2026-07-24'
+method: searched
+source: https://www.frbservices.org/fedline-solutions/fedline-developer/fednow-apis
+docs: https://www.frbservices.org/fedline-solutions/fedline-developer
+summary:
+  types: [mutualTLS, apiKey]
+  api_key_in: [header]
+  oauth2_flows: []
+  gated: true
+  audience: enrolled financial institutions (FedNow / FedLine participants)
+schemes:
+- name: ClientCertificate
+  type: mutualTLS
+  description: >-
+    Each FedNow / FRFS API call presents a client PKI certificate. A separate
+    certificate is required per environment (Test and Production); the same
+    certificate may be reused across multiple APIs or a unique certificate may be
+    requested per API. Certificates are provisioned through the credential-gated
+    FedLine Developer platform.
+- name: ClientID
+  type: apiKey
+  in: header
+  description: >-
+    A Client ID accompanies the certificate to identify the calling institution
+    and its API entitlements.
+- name: FedLineSecurityToken
+  type: mfa
+  description: >-
+    FedLine multi-factor authentication security tokens gate access to the FedLine
+    Developer platform where API credentials (Client ID + certificate) are managed.
+    This layers institution-level MFA on top of the per-request certificate auth.
+notes: >-
+  FedNow is not a self-serve public API. Authentication is layered: FedLine MFA
+  security tokens to reach the developer platform, then Client ID + a
+  per-environment PKI client certificate on each API request. No OAuth2/OpenID
+  Connect flow and no public API key self-service are published; onboarding is
+  restricted to enrolled U.S. financial institutions.

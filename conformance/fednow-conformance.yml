@@ -1,0 +1,36 @@
+generated: '2026-07-24'
+method: searched
+source: https://www.frbservices.org/financial-services/fednow/what-is-iso-20022-why-does-it-matter
+standards:
+- id: iso-20022
+  conforms: true
+  evidence: >-
+    FedNow is ISO 20022 native. Message specifications for customer credit
+    transfers, requests for payment, liquidity transfers and system/account
+    reporting are published on SWIFT MyStandards under the Federal Reserve
+    Financial Services group.
+- id: mutual-tls
+  conforms: true
+  evidence: >-
+    FedNow / FRFS APIs require a client PKI certificate per environment (Test and
+    Production) presented on each request (mutual TLS).
+- id: real-time-payments
+  conforms: true
+  evidence: >-
+    FedNow is a 24x7x365 instant-payments rail with immediate interbank
+    settlement in central bank money, alongside RTP and ACH as one of three
+    domestic U.S. rails.
+- id: rfc9457-problem-details
+  conforms: false
+  evidence: No public OpenAPI or error schema is published to confirm.
+- id: oauth2
+  conforms: false
+  evidence: Authentication is mutual-TLS + Client ID, not OAuth2.
+- id: openid-connect
+  conforms: false
+- id: fapi
+  conforms: false
+notes: >-
+  ISO 20022 is the anchor conformance claim for FedNow. The ISO 20022 message
+  library, implementation guide and readiness/testing portal are hosted behind
+  SWIFT MyStandards and require a SWIFT account to view.

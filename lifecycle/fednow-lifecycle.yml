@@ -1,0 +1,29 @@
+generated: '2026-07-24'
+method: searched
+source: https://www.frbservices.org/fedline-solutions/fedline-developer/fednow-apis
+versioning:
+  scheme: iso-20022-release
+  note: >-
+    Message-level versioning follows the ISO 20022 release cycle published on
+    SWIFT MyStandards; the FedNow REST APIs (Account Balance, Network
+    Intelligence, Participant List, Ping) are governed through the FedLine
+    Developer platform rather than a public semantic-version scheme.
+  docs: https://www2.swift.com/mystandards/#/group/Federal_Reserve_Financial_Services
+status_page: https://www.frbservices.org/app/status/serviceStatus.do
+status_page_note: >-
+  FRBservices.org Service Status page. FedNow Service operational status is
+  surfaced here (green/yellow/red indicator) and via direct participant
+  notifications for critical incidents.
+sla:
+  availability: 24x7x365
+  note: >-
+    FedNow operates 24 hours a day, every day of the year, with immediate
+    interbank settlement. Detailed availability and operational-interruption
+    handling are defined in the FedNow Service Operating Procedures and the
+    FedNow rulebook rather than a public numeric uptime SLA.
+  operating_procedures: https://www.frbservices.org/binaries/content/assets/crsocms/resources/rules-regulations/0624-fednow-service-operating-procedures.pdf
+deprecation:
+  policy_url: null
+  sunset_header: null
+  note: No public deprecation policy or RFC 8594 Sunset/Deprecation header support is documented.
+deprecated_operations: []
