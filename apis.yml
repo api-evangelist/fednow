@@ -1,0 +1,144 @@
+aid: fednow
+url: https://raw.githubusercontent.com/api-evangelist/fednow/refs/heads/main/apis.yml
+name: FedNow Service
+kind: company
+description: >-
+  The FedNow Service is an instant payments rail operated by the Federal Reserve
+  Banks, launched in July 2023 to move funds between U.S. financial institutions in
+  real time, 24 hours a day, 365 days a year, with immediate interbank settlement in
+  central bank money. It is ISO 20022 native and is one of three domestic U.S. rails
+  alongside The Clearing House's RTP network and the ACH network. FedNow is a scheme
+  operator, not a consumer-facing PSP; participating banks and credit unions connect
+  over FedLine (Direct or Advantage), exchange ISO 20022 messages for customer credit
+  transfers, requests for payment, liquidity transfers and system/account reporting,
+  and may optionally use a small set of FedNow REST APIs (Account Balance, Network
+  Intelligence, Participant List, Ping) exposed through the credential-gated FedLine
+  Developer portal. Its public developer surface is documentation- and rulebook-first:
+  ISO 20022 message specifications live behind SWIFT MyStandards and API access is
+  restricted to enrolled institutions, so there is no open, self-serve public API.
+accessModel:
+  pricing: paid
+  onboarding: gated
+  trial: false
+  try_now: false
+  public: false
+  label: Fee-based · Participation gated to financial institutions
+  confidence: high
+  source:
+  - fees
+  - authentication
+  generated: '2026-07-24'
+  method: reviewed
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+tags:
+- Payments
+- United States
+- Real-Time Payments
+- Instant Payments
+- ISO 20022
+- Account-to-Account
+- Scheme Operator
+- Federal Reserve
+created: '2026-07-24'
+modified: '2026-07-24'
+specificationVersion: '0.19'
+apis:
+- aid: fednow:fednow-account-balance-api
+  name: FedNow Account Balance API
+  description: Account Management API letting a participating financial institution
+    programmatically retrieve its FedNow master account balance information. Documented
+    on the FedLine Developer portal as one of the optional FedNow REST APIs; access
+    is gated to enrolled institutions and no public OpenAPI is published.
+  humanURL: https://www.frbservices.org/fedline-solutions/fedline-developer/fednow-apis
+  tags:
+  - Account Management
+  - Balance
+  - Real-Time Payments
+  properties:
+  - type: Documentation
+    url: https://www.frbservices.org/fedline-solutions/fedline-developer/fednow-apis
+  - type: APIReference
+    url: https://www.frbservices.org/fedline-solutions/fedline-developer
+- aid: fednow:fednow-network-intelligence-api
+  name: FedNow Network Intelligence API
+  description: Risk Mitigation API providing fraud-prevention and risk signals across
+    the FedNow network to participating institutions. Documented on the FedLine Developer
+    portal as an optional FedNow REST API; access is gated to enrolled institutions
+    and no public OpenAPI is published.
+  humanURL: https://www.frbservices.org/fedline-solutions/fedline-developer/fednow-apis
+  tags:
+  - Risk Mitigation
+  - Fraud
+  - Real-Time Payments
+  properties:
+  - type: Documentation
+    url: https://www.frbservices.org/fedline-solutions/fedline-developer/fednow-apis
+  - type: APIReference
+    url: https://www.frbservices.org/fedline-solutions/fedline-developer
+- aid: fednow:fednow-participant-list-api
+  name: FedNow Participant List API
+  description: Service Management API returning the current list of FedNow Service
+    participants so an institution can confirm reachable routing endpoints before
+    sending a payment. Documented on the FedLine Developer portal as an optional FedNow
+    REST API; access is gated to enrolled institutions and no public OpenAPI is published.
+  humanURL: https://www.frbservices.org/fedline-solutions/fedline-developer/fednow-apis
+  tags:
+  - Service Management
+  - Directory
+  - Real-Time Payments
+  properties:
+  - type: Documentation
+    url: https://www.frbservices.org/fedline-solutions/fedline-developer/fednow-apis
+  - type: APIReference
+    url: https://www.frbservices.org/fedline-solutions/fedline-developer
+- aid: fednow:fednow-ping-api
+  name: FedNow Ping API
+  description: Service Management API used to verify connectivity and availability
+    of the FedNow Service from a participant's connection. Documented on the FedLine
+    Developer portal as an optional FedNow REST API; access is gated to enrolled institutions
+    and no public OpenAPI is published.
+  humanURL: https://www.frbservices.org/fedline-solutions/fedline-developer/fednow-apis
+  tags:
+  - Service Management
+  - Connectivity
+  - Real-Time Payments
+  properties:
+  - type: Documentation
+    url: https://www.frbservices.org/fedline-solutions/fedline-developer/fednow-apis
+  - type: APIReference
+    url: https://www.frbservices.org/fedline-solutions/fedline-developer
+- aid: fednow:fednow-iso-20022-message-specifications
+  name: FedNow ISO 20022 Message Specifications
+  description: The core scheme messaging surface of the FedNow Service. FedNow is ISO
+    20022 native and defines message types for customer credit transfers, requests
+    for payment, interbank liquidity transfers, and system/account reporting. The
+    current message specifications, implementation guide, message flows, and readiness/testing
+    portal are hosted on SWIFT MyStandards and require a SWIFT account to access.
+  humanURL: https://www.frbservices.org/financial-services/fednow/what-is-iso-20022-why-does-it-matter
+  tags:
+  - ISO 20022
+  - Messaging
+  - Real-Time Payments
+  properties:
+  - type: Documentation
+    url: https://www.frbservices.org/financial-services/fednow/what-is-iso-20022-why-does-it-matter
+  - type: APIReference
+    url: https://www2.swift.com/mystandards/#/group/Federal_Reserve_Financial_Services
+common:
+- type: Website
+  url: https://www.frbservices.org/financial-services/fednow
+- type: DeveloperPortal
+  url: https://www.frbservices.org/fedline-solutions/fedline-developer
+- type: Documentation
+  url: https://www.frbservices.org/resources/financial-services/fednow
+- type: APIReference
+  url: https://www.frbservices.org/fedline-solutions/fedline-developer/fednow-apis
+- type: Pricing
+  url: https://www.frbservices.org/resources/fees/fednow-2026
+- type: SignUp
+  url: https://www.frbservices.org/forms/fednow-service
+- type: Support
+  url: https://www.frbservices.org/contact
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com

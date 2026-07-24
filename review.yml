@@ -1,0 +1,106 @@
+aid: fednow
+name: FedNow Service
+review:
+  question: Does the FedNow Service expose an open, self-serve public API with a downloadable OpenAPI specification?
+  answer: false
+  date: '2026-07-24'
+  reviewer: API Evangelist
+findings:
+  summary: |
+    The FedNow Service is a domestic U.S. real-time payments rail operated by
+    the Federal Reserve Banks (launched July 2023), settling interbank in
+    central bank money 24/7/365. It is a scheme operator, not a consumer PSP,
+    and its public developer surface is documentation- and rulebook-first.
+    A public developer portal exists (FedLine Developer,
+    https://www.frbservices.org/fedline-solutions/fedline-developer, HTTP 200),
+    and a FedNow-specific API page is public
+    (https://www.frbservices.org/fedline-solutions/fedline-developer/fednow-apis,
+    HTTP 200) documenting four optional FedNow REST APIs: Account Balance
+    (Account Management), Network Intelligence (Risk Mitigation), Participant
+    List and Ping (both Service Management). These APIs are optional and are
+    reachable only through FedNow DevRel via FedLine Developer, which requires
+    a FedLine credential; access is gated to enrolled financial institutions.
+    NO downloadable OpenAPI/Swagger specification is published publicly for any
+    of these APIs. The core messaging surface is ISO 20022: customer credit
+    transfers, requests for payment, interbank liquidity transfers, and
+    system/account reporting messages. The current ISO 20022 message
+    specifications, implementation guide, message flows, and the readiness/
+    testing portal are hosted on SWIFT MyStandards
+    (https://www2.swift.com/mystandards/#/group/Federal_Reserve_Financial_Services)
+    behind a SWIFT account, not as an open download. No public Postman
+    collection, GraphQL surface, gRPC/.proto, or AsyncAPI/webhook event catalog
+    was found. This is a correct "built-stub" identity + docs-pointer record
+    for a docs-first scheme operator with no open self-serve API.
+  homeMarket: United States
+  tier: rails-scheme
+  developerPortal:
+    url: https://www.frbservices.org/fedline-solutions/fedline-developer
+    httpStatus: 200
+    confirmed: true
+    selfServe: false
+    note: Credential-gated to enrolled financial institutions; FedNow APIs reached via FedNow DevRel through this portal.
+  authModel:
+    scheme: FedLine credential / connectivity
+    note: |
+      Connectivity and authentication are handled through FedLine (Direct or
+      Advantage) rather than a public API key or OAuth flow. No anonymous
+      /.well-known/openid-configuration or oauth-authorization-server was
+      served for these hosts. Access is restricted to participating institutions.
+  openApiHarvested: false
+  specsCount: 0
+  isoStandard: ISO 20022 (native)
+  webhooks:
+    documented: false
+    note: No public AsyncAPI or webhook/event catalog found; messaging is ISO 20022 message exchange over FedLine.
+  postman: false
+  graphql: false
+  transports:
+  - protocol: REST
+    scheme: https
+    documented: true
+    note: Four optional FedNow REST APIs (Account Balance, Network Intelligence, Participant List, Ping) documented on FedLine Developer; access gated, no public base URL or OpenAPI.
+  - protocol: ISO 20022 messaging
+    scheme: FedLine
+    documented: true
+    note: Native scheme messaging over FedLine connectivity; specifications hosted on SWIFT MyStandards behind login.
+sources:
+- url: https://www.frbservices.org/financial-services/fednow
+  type: Website
+  httpStatus: 200
+  note: FedNow Service overview operated by the Federal Reserve Banks.
+- url: https://www.frbservices.org/fedline-solutions/fedline-developer
+  type: DeveloperPortal
+  httpStatus: 200
+  note: FedLine Developer portal exposing FRFS APIs (Accounting, Check, FedACH, FedNow); credential required.
+- url: https://www.frbservices.org/fedline-solutions/fedline-developer/fednow-apis
+  type: APIReference
+  httpStatus: 200
+  note: Documents four optional FedNow REST APIs; no downloadable OpenAPI; access via FedNow DevRel.
+- url: https://www.frbservices.org/financial-services/fednow/what-is-iso-20022-why-does-it-matter
+  type: Documentation
+  httpStatus: 200
+  note: FedNow ISO 20022 message types and pointer to SWIFT MyStandards.
+- url: https://www2.swift.com/mystandards/#/group/Federal_Reserve_Financial_Services
+  type: APIReference
+  httpStatus: 200
+  note: SWIFT MyStandards group hosting FedNow ISO 20022 message specifications; SWIFT account required.
+- url: https://www.frbservices.org/resources/financial-services/fednow
+  type: Documentation
+  httpStatus: 200
+  note: FedNow resources hub (guides, education, technical overview).
+- url: https://www.frbservices.org/resources/fees/fednow-2026
+  type: Pricing
+  httpStatus: 200
+  note: FedNow 2026 fee schedule; APIs generally carry no separate charge beyond the service fee.
+- url: https://explore.fednow.org/resources/technical-overview-guide.pdf
+  type: Documentation
+  httpStatus: 200
+  note: FedNow Service Technical Overview and Planning Guide (public PDF).
+actions:
+  openApiHarvested: false
+  reason: |
+    No open, self-serve public API and no publicly downloadable OpenAPI/Swagger
+    exist for the FedNow Service. The four FedNow REST APIs are gated behind
+    FedLine credentials and the ISO 20022 message specifications are gated
+    behind SWIFT MyStandards. An honest identity + docs-pointer record was
+    created; nothing was fabricated and no spec files were saved.
