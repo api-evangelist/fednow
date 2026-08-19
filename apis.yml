@@ -52,7 +52,7 @@ tags:
 - Federal Reserve
 created: '2026-07-24'
 modified: '2026-07-24'
-specificationVersion: '0.19'
+specificationVersion: '0.23'
 apis:
 - aid: fednow:fednow-account-balance-api
   name: FedNow Account Balance API
