@@ -63,6 +63,10 @@ apis:
   humanURL: https://www.frbservices.org/fedline-solutions/fedline-developer/fednow-apis
   tags:
   - Account Management
+  - Balances
+  - Real-Time Payments
+  tags_raw:
+  - Account Management
   - Balance
   - Real-Time Payments
   properties:
