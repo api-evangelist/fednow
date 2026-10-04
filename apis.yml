@@ -83,6 +83,10 @@ apis:
   humanURL: https://www.frbservices.org/fedline-solutions/fedline-developer/fednow-apis
   tags:
   - Risk Mitigation
+  - Fraud Prevention
+  - Real-Time Payments
+  tags_raw:
+  - Risk Mitigation
   - Fraud
   - Real-Time Payments
   properties:
