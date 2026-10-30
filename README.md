@@ -1,4 +1,4 @@
-# FedNow Service (fednow)
+# FedNow Service
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -64,73 +64,98 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-The FedNow Service is an instant payments rail operated by the Federal Reserve Banks, launched in July 2023 to move funds between U.S. financial institutions in real time, 24 hours a day, 365 days a year, with immediate interbank settlement in central bank money. It is ISO 20022 native and is one of three domestic U.S. rails alongside The Clearing House's RTP network and the ACH network. FedNow is a scheme operator, not a consumer-facing PSP: participating banks and credit unions connect over FedLine and exchange ISO 20022 messages, optionally using a small set of FedNow REST APIs exposed through the credential-gated FedLine Developer portal.
+The FedNow Service is an instant payments rail operated by the Federal Reserve Banks, launched in July 2023 to move funds between U.S. financial institutions in real time, 24 hours a day, 365 days a year, with immediate interbank settlement in central bank money. It is ISO 20022 native and is one of three domestic U.S. rails alongside The Clearing House's RTP network and the ACH network. FedNow is a scheme operator, not a consumer-facing PSP; participating banks and credit unions connect over FedLine (Direct or Advantage), exchange ISO 20022 messages for customer credit transfers, requests for payment, liquidity transfers and system/account reporting, and may optionally use a small set of FedNow REST APIs (Account Balance, Network Intelligence, Participant List, Ping) exposed through the credential-gated FedLine Developer portal. Its public developer surface is documentation- and rulebook-first: ISO 20022 message specifications live behind SWIFT MyStandards and API access is restricted to enrolled institutions, so there is no open, self-serve public API.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/fednow/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/fednow/refs/heads/main/apis.yml)
+**Areas:** Payments · United States · Real-Time Payments · Instant Payments · ISO 20022 · Account-to-Account · Scheme Operator · Federal Reserve
 
-## Tags
+## FedNow Service on APIs.io
 
-- Payments
-- United States
-- Real-Time Payments
-- Instant Payments
-- ISO 20022
-- Account-to-Account
-- Scheme Operator
-- Federal Reserve
+Everything profiled for FedNow Service is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/fednow/](https://apis.io/providers/fednow/)** — or go straight to one of the APIs or properties below.
 
-## Timestamps
+### APIs (5)
 
-- **Created:** 2026-07-24
-- **Modified:** 2026-07-24
+- [FedNow Account Balance API](https://apis.io/apis/fednow/fednow-account-balance-api/) — Account Management API letting a participating financial institution programmatically retrieve its FedNow master account balance information. Documented on…
+- [FedNow Network Intelligence API](https://apis.io/apis/fednow/fednow-network-intelligence-api/) — Risk Mitigation API providing fraud-prevention and risk signals across the FedNow network to participating institutions. Documented on the FedLine Developer…
+- [FedNow Participant List API](https://apis.io/apis/fednow/fednow-participant-list-api/) — Service Management API returning the current list of FedNow Service participants so an institution can confirm reachable routing endpoints before sending a…
+- [FedNow Ping API](https://apis.io/apis/fednow/fednow-ping-api/) — Service Management API used to verify connectivity and availability of the FedNow Service from a participant's connection. Documented on the FedLine…
+- [FedNow ISO 20022 Message Specifications](https://apis.io/apis/fednow/fednow-iso-20022-message-specifications/) — The core scheme messaging surface of the FedNow Service. FedNow is ISO 20022 native and defines message types for customer credit transfers, requests for…
 
-## API Posture
+### Published properties
 
-FedNow's public developer surface is documentation- and rulebook-first. There is no open, self-serve public API and no publicly downloadable OpenAPI/Swagger specification. API access is gated to enrolled financial institutions through the credential-required FedLine Developer portal, and the ISO 20022 message specifications, implementation guide, message flows, and readiness/testing portal are hosted on SWIFT MyStandards behind a SWIFT account. Authentication and connectivity are handled through FedLine (Direct or Advantage), not a public API key or OAuth flow.
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs
+#### Security (2)
 
-### FedNow Account Balance API
+Authentication, trust centre, and vulnerability disclosure.
 
-Account Management API letting a participating financial institution programmatically retrieve its FedNow master account balance information.
+- [Fednow Authentication](https://apis.io/security/fednow/fednow-authentication/)
+- [Fednow Domain Security](https://apis.io/security/fednow/fednow-domain-security/)
 
-- **Human URL:** [https://www.frbservices.org/fedline-solutions/fedline-developer/fednow-apis](https://www.frbservices.org/fedline-solutions/fedline-developer/fednow-apis)
+## Where to find this API
 
-### FedNow Network Intelligence API
-
-Risk Mitigation API providing fraud-prevention and risk signals across the FedNow network to participating institutions.
-
-- **Human URL:** [https://www.frbservices.org/fedline-solutions/fedline-developer/fednow-apis](https://www.frbservices.org/fedline-solutions/fedline-developer/fednow-apis)
-
-### FedNow Participant List API
-
-Service Management API returning the current list of FedNow Service participants so an institution can confirm reachable routing endpoints before sending a payment.
-
-- **Human URL:** [https://www.frbservices.org/fedline-solutions/fedline-developer/fednow-apis](https://www.frbservices.org/fedline-solutions/fedline-developer/fednow-apis)
-
-### FedNow Ping API
-
-Service Management API used to verify connectivity and availability of the FedNow Service from a participant's connection.
-
-- **Human URL:** [https://www.frbservices.org/fedline-solutions/fedline-developer/fednow-apis](https://www.frbservices.org/fedline-solutions/fedline-developer/fednow-apis)
-
-### FedNow ISO 20022 Message Specifications
-
-The core scheme messaging surface of the FedNow Service — message types for customer credit transfers, requests for payment, interbank liquidity transfers, and system/account reporting, hosted on SWIFT MyStandards.
-
-- **Human URL:** [https://www.frbservices.org/financial-services/fednow/what-is-iso-20022-why-does-it-matter](https://www.frbservices.org/financial-services/fednow/what-is-iso-20022-why-does-it-matter)
-
-## Common Properties
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
 - [Website](https://www.frbservices.org/financial-services/fednow)
-- [Developer Portal](https://www.frbservices.org/fedline-solutions/fedline-developer)
 - [Documentation](https://www.frbservices.org/resources/financial-services/fednow)
-- [API Reference](https://www.frbservices.org/fedline-solutions/fedline-developer/fednow-apis)
+- [Getting started](https://www.frbservices.org/fedline-solutions/fedline-developer/sign-up)
+- [API reference](https://www.frbservices.org/fedline-solutions/fedline-developer/fednow-apis)
 - [Pricing](https://www.frbservices.org/resources/fees/fednow-2026)
-- [Sign Up](https://www.frbservices.org/forms/fednow-service)
+- [Sign up](https://www.frbservices.org/forms/fednow-service)
 - [Support](https://www.frbservices.org/contact)
+- [Blog](https://www.frbservices.org/news/fed360)
+- [Terms of service](https://frbservices.org/terms)
+- [Privacy policy](https://app.frbservices.org/terms/privacy.html)
+- [Status](https://www.frbservices.org/app/status/serviceStatus.do)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 36.6** — thin · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 69.6 |
+| Contract quality | 0.0 |
+| Contract governance | 18.2 |
+| Operational transparency | 31.6 |
+| Developer ergonomics | 64.3 |
+| Access clarity | 44.7 |
+
+**Agent readiness 2.5** — human-only
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | — |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 29.5** — Payments
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/fednow/](https://apis.io/providers/fednow/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for FedNow Service: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/fednow/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
